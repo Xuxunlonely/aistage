@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于 | AI Lab</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0b0f1a;
+      --panel: #121829;
+      --line: #1f2a44;
+      --text: #e6ebf5;
+      --muted: #8b96b0;
+      --accent: #6ee7ff;
+      --accent2: #a78bfa;
+    }
+    body { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(860px, 92%); margin: 0 auto; }
+
+    header { position: sticky; top: 0; z-index: 10; background: rgba(11,15,26,.85); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    header .container { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; width: min(1200px, 92%); }
+    .logo { font-weight: 800; font-size: 20px; background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; color: transparent; text-decoration: none; }
+    nav a { margin-left: 22px; font-size: 14px; color: var(--muted); text-decoration: none; }
+    nav a:hover, nav a.active { color: var(--accent); }
+
+    .page-head { padding: 70px 0 30px; text-align: center; background: radial-gradient(ellipse at top, #1b2650 0%, var(--bg) 60%); }
+    .page-head h1 { font-size: 40px; margin-bottom: 12px; }
+    .page-head h1 span { background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; color: transparent; }
+    .page-head p { color: var(--muted); font-size: 17px; max-width: 620px; margin: 0 auto; }
+
+    section { margin: 40px 0; }
+    section h2 { font-size: 22px; margin-bottom: 14px; }
+    section p { color: var(--muted); margin-bottom: 12px; }
+    section ul { color: var(--muted); padding-left: 20px; }
+    section li { margin-bottom: 8px; }
+    section strong { color: var(--text); }
+
+    .cats { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 16px; }
+    .cat { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+    .cat .name { font-weight: 700; margin-bottom: 4px; }
+    .cat .desc { color: var(--muted); font-size: 14px; }
+
+    .notice { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--accent2); border-radius: 10px; padding: 18px 20px; color: var(--muted); font-size: 15px; }
+
+    footer { border-top: 1px solid var(--line); padding: 36px 0; color: var(--muted); font-size: 14px; text-align: center; margin-top: 40px; }
+
+    @media (max-width: 720px) {
+      nav { display: none; }
+      .page-head h1 { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a class="logo" href="index.html">AI Lab</a>
+      <nav>
+        <a href="index.html">工具</a>
+        <a href="about.html" class="active">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head" style="margin:0">
+      <div class="container">
+        <h1>关于 <span>AI Lab</span></h1>
+        <p>一个按用途整理 AI 工具的导航站，帮你快速找到合适的工具。</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <section>
+        <h2>这是什么</h2>
+        <p>AI Lab 把常用的 AI 工具按用途分类，列出每个工具的名称、简介和标签。首页支持分类筛选和关键词搜索，方便你在十个类别之间快速切换。</p>
+      </section>
+
+      <section>
+        <h2>收录分类</h2>
+        <div class="cats">
+          <div class="cat"><div class="name">🎬 视频</div><div class="desc">文生视频、剪辑、数字人视频</div></div>
+          <div class="cat"><div class="name">🎙️ 声音</div><div class="desc">语音合成、语音降噪、音色克隆</div></div>
+          <div class="cat"><div class="name">🎤 唱歌</div><div class="desc">AI 翻唱、歌曲生成、人声分离</div></div>
+          <div class="cat"><div class="name">🖼️ P 图</div><div class="desc">智能抠图、图片修复、换背景</div></div>
+          <div class="cat"><div class="name">🎨 图像生成</div><div class="desc">文生图、草图上色</div></div>
+          <div class="cat"><div class="name">✍️ 写作</div><div class="desc">写作助手、论文润色</div></div>
+          <div class="cat"><div class="name">💻 编程</div><div class="desc">代码补全、代码解释</div></div>
+          <div class="cat"><div class="name">📊 办公</div><div class="desc">PPT 生成、会议纪要</div></div>
+          <div class="cat"><div class="name">🌐 翻译</div><div class="desc">文档翻译、实时口译</div></div>
+          <div class="cat"><div class="name">📚 学习</div><div class="desc">知识问答、题目讲解</div></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>怎么使用</h2>
+        <ul>
+          <li><strong>按分类浏览：</strong>在首页顶部点击分类标签，只看该类工具。</li>
+          <li><strong>搜索：</strong>在右上角输入关键词，可匹配工具名称、简介、标签和分类。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>免责声明</h2>
+        <div class="notice">
+          工具收录仅供参考。各工具的具体功能、价格和使用条款可能随时变化，请以官方页面为准。
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>AI Lab · <a href="index.html">返回首页</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
