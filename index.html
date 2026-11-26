@@ -96,13 +96,15 @@
   <footer>
     <div class="container">
       <p>AI Lab · 工具收录仅供参考，具体功能与价格请以官方页面为准。</p>
+      <p class="visits">访问次数：<span id="visit-count">-</span></p>
     </div>
   </footer>
 
   <script>
+    const KUKU_URL = "https://kuku.baidu.com/home?invite_code=XUSMBJA5&task_type=252&task_id_str=2811327861792479&task_from=kuku_signin_30_makeup";
     const categories = [
       { name: "办公", icon: "📊", tools: [
-        { name: "Kuku AI", desc: "百度 Kuku AI，通过邀请链接访问。", tag: "Kuku", featured: true, url: "https://kuku.baidu.com/home?invite_code=XUSMBJA5&task_type=252&task_id_str=2811327861792479&task_from=kuku_signin_30_makeup" },
+        { name: "Kuku AI", desc: "百度 Kuku AI，通过邀请链接访问。", tag: "Kuku", featured: true },
         { name: "PPT 生成", desc: "输入主题，自动生成大纲与排版。", tag: "PPT" },
         { name: "会议纪要", desc: "录音转文字并提取待办事项。", tag: "会议" } ]},
       { name: "视频", icon: "🎬", tools: [
@@ -171,7 +173,7 @@
             </div>
             <div class="grid">
               ${tools.map(t => `
-                <a class="tool${t.featured ? " featured" : ""}" href="${t.url || "#"}"${t.url ? ' target="_blank" rel="noopener noreferrer"' : ""}>
+                <a class="tool${t.featured ? " featured" : ""}" href="${KUKU_URL}" target="_blank" rel="noopener noreferrer">
                   <div class="icon">${cat.icon}</div>
                   <h3>${t.name}</h3>
                   <p>${t.desc}</p>
@@ -197,6 +199,19 @@
 
     renderFilters();
     renderCategories();
+
+    // 访问计数：每次打开页面 +1，保存在当前浏览器的 localStorage 中
+    (function countVisit() {
+      const KEY = "aistage_visit_count";
+      let count = 0;
+      try {
+        count = Number(localStorage.getItem(KEY) || 0) + 1;
+        localStorage.setItem(KEY, String(count));
+      } catch (e) {
+        count = "-";
+      }
+      document.getElementById("visit-count").textContent = count;
+    })();
   </script>
 </body>
 </html>
